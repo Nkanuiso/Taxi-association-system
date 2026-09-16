@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registerAdmin</title>
+</head>
+<body>
+
+    <form action="{{url_for('add_admin')}}" method="post">
+
+        <input type="text" placeholder="Enter your name" name="name"><br><br>
+        <input type="text" placeholder="Enter your surname" name = "surname"><br><br>
+        <input type="text" placeholder="Enter your email" name="email"><br><br>
+        <input type="password" placeholder="Enter your phone password" name="password"><br><br>
+        <input type="text" placeholder="Enter your phone number" name = "phone_no" ><br><br>
+        <button type="submit">SignUp</button>
+
+    </form>
+
+    <!-- {% with messages = get_flashed_messages(with_categories = true)%}
+        {%if message%}
+            {% for category, message in messages %}
+            <div class="flash-message {{ category }}">
+                {{ message }}
+            </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %} -->
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="flash-message {{ category }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    
+</body>
+</html>

@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrator Dashboard | SA Taxi Association</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='5_AdminDashboard.css') }}">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">
+                <i class="fa-solid fa-taxi"></i>
+            </div>
+
+            <div>
+                <h2>SA Taxi Association</h2>
+                <p>Administrator Portal</p>
+            </div>
+        </div>
+
+        <nav class="navigation">
+
+            <a href="" class="nav-item active">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="" class="nav-item">
+                <i class="fa-solid fa-users"></i>
+                <span>Commuters</span>
+            </a>
+
+            <a href="" class="nav-item">
+                <i class="fa-solid fa-user-tie"></i>
+                <span>Managers</span>
+            </a>
+
+            <a href="" class="nav-item">
+                <i class="fa-solid fa-shield-halved"></i>
+                <span>Administrators</span>
+            </a>
+
+            <a href="" class="nav-item">
+                <i class="fa-solid fa-car"></i>
+                <span>Taxis</span>
+            </a>
+
+            <a href="" class="nav-item">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Daily Activity</span>
+            </a>
+
+            <a href="#" class="nav-item">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+        <div class="logout">
+            <a href="#">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </a>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- TOP BAR -->
+        <header class="topbar">
+
+            <div class="welcome">
+                <button class="menu-button">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div>
+                    <h3>Welcome, Admin</h3>
+                    <p>Here's what's happening in the taxi association today.</p>
+                </div>
+            </div>
+
+            <div class="topbar-right">
+
+                <div class="date">
+                    <i class="fa-regular fa-calendar"></i>
+                    <span id="currentDate"></span>
+                </div>
+
+                <div class="profile">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- PAGE -->
+        <section class="page">
+
+            <h1>Administrator Dashboard</h1>
+
+
+            <!-- STATISTICS -->
+            <div class="stats-grid">
+
+                <div class="stat-card blue">
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+
+                    <div>
+                        <p>Total Commuters</p>
+                        <h2>0</h2>
+                        <small class="increase">
+                            <i class="fa-solid fa-arrow-up"></i>
+                            0
+                        </small>
+                    </div>
+                </div>
+
+
+                <div class="stat-card green">
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+
+                    <div>
+                        <p>Total Managers</p>
+                        <h2>None</h2>
+                        <small class="increase">
+                            <i class="fa-solid fa-arrow-up"></i>
+                            +1 today
+                        </small>
+                    </div>
+                </div>
+
+
+                <div class="stat-card purple">
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+
+                    <div>
+                        <p>Total Administrators</p>
+                        <h2>None</h2>
+                        <small>
+                            <i class="fa-solid fa-minus"></i>
+                            0 today
+                        </small>
+                    </div>
+                </div>
+
+
+                <div class="stat-card yellow">
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-taxi"></i>
+                    </div>
+
+                    <div>
+                        <p>Active Taxis</p>
+                        <h2>None</h2>
+                        <small class="increase">
+                            <i class="fa-solid fa-arrow-up"></i>
+                            +2 today
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- CHART + MAP -->
+            <div class="middle-grid">
+
+                <!-- ACTIVITY CHART -->
+                <div class="panel activity-panel">
+
+                    <div class="panel-header">
+                        <h2>Today's Activity</h2>
+
+                        <div class="legend">
+                            <span>
+                                <b class="dot blue-dot"></b>
+                                Pickups
+                            </span>
+
+                            <span>
+                                <b class="dot green-dot"></b>
+                                Drop-offs
+                            </span>
+
+                            <span>
+                                <b class="dot purple-dot"></b>
+                                Total Rides
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="chart">
+                        <div class="y-labels">
+                            <span>50</span>
+                            <span>40</span>
+                            <span>30</span>
+                            <span>20</span>
+                            <span>10</span>
+                            <span>0</span>
+                        </div>
+
+                        <div class="chart-area">
+
+                            <div class="grid-line line-50"></div>
+                            <div class="grid-line line-40"></div>
+                            <div class="grid-line line-30"></div>
+                            <div class="grid-line line-20"></div>
+                            <div class="grid-line line-10"></div>
+                            <div class="grid-line line-0"></div>
+
+                            <svg viewBox="0 0 700 220"
+                                 preserveAspectRatio="none"
+                                 class="chart-svg">
+
+                                <polyline
+                                    points="0,190 45,180 90,178 135,165 180,168 225,160 270,140 315,143 360,125 405,115 450,120 495,100 540,95 585,75 630,55 675,60 700,50"
+                                    fill="none"
+                                    stroke="#1769e0"
+                                    stroke-width="3"/>
+
+                                <polyline
+                                    points="0,205 45,200 90,198 135,188 180,190 225,180 270,168 315,165 360,150 405,145 450,150 495,135 540,130 585,110 630,105 675,92 700,95"
+                                    fill="none"
+                                    stroke="#159957"
+                                    stroke-width="3"/>
+
+                                <polyline
+                                    points="0,175 45,160 90,155 135,130 180,140 225,125 270,110 315,112 360,90 405,75 450,82 495,65 540,70 585,45 630,28 675,20 700,25"
+                                    fill="none"
+                                    stroke="#7137d8"
+                                    stroke-width="3"/>
+
+                            </svg>
+
+                            <div class="x-labels">
+                                <span>06:00</span>
+                                <span>08:00</span>
+                                <span>10:00</span>
+                                <span>12:00</span>
+                                <span>14:00</span>
+                                <span>16:00</span>
+                                <span>18:00</span>
+                                <span>20:00</span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- MAP PLACEHOLDER -->
+                <div class="panel map-panel">
+
+                    <div class="panel-header">
+                        <h2>Live Taxi Locations</h2>
+                        <a href="#">View All</a>
+                    </div>
+
+                    <div class="map">
+
+                        <div class="road road-1"></div>
+                        <div class="road road-2"></div>
+                        <div class="road road-3"></div>
+
+                        <div class="map-area">
+                            <span class="town">Taxi Association Area</span>
+
+                            <div class="taxi-marker marker-1">
+                                <i class="fa-solid fa-taxi"></i>
+                            </div>
+
+                            <div class="taxi-marker marker-2">
+                                <i class="fa-solid fa-taxi"></i>
+                            </div>
+
+                            <div class="taxi-marker marker-3">
+                                <i class="fa-solid fa-taxi"></i>
+                            </div>
+
+                            <div class="taxi-marker marker-4">
+                                <i class="fa-solid fa-taxi"></i>
+                            </div>
+
+                            <div class="commuter-marker">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="map-legend">
+                        <span>
+                            <i class="fa-solid fa-taxi available"></i>
+                            Available Taxi
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-taxi on-trip"></i>
+                            On Trip
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-location-dot commuter"></i>
+                            Commuter
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- BOTTOM -->
+            <div class="bottom-grid">
+
+                <!-- RECENT ACTIVITY -->
+                <div class="panel recent-panel">
+
+                    <div class="panel-header">
+                        <h2>Recent Activity (Today)</h2>
+                        <a href="#">View All</a>
+                    </div>
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>Time</th>
+                                    <th>Type</th>
+                                    <th>Details</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                               
+                                <tr>
+
+                                    <td>0</td>
+
+                                    <td>0</td>
+
+                                    <td>0</td>
+
+                                    <td>
+                                        <span class="status">
+                                            none
+                                        </span>
+                                    </td>
+
+                                </tr>
+                                
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+
+                <!-- QUICK ACTIONS -->
+                <div class="panel quick-panel">
+
+                    <div class="panel-header">
+                        <h2>Quick Actions</h2>
+                    </div>
+
+                    <div class="quick-grid">
+
+                        <a href="#" class="quick-action blue-action">
+                            <i class="fa-solid fa-user-plus"></i>
+                            <span>Add Commuter</span>
+                        </a>
+
+                        <a href="#" class="quick-action green-action">
+                            <i class="fa-solid fa-user-tie"></i>
+                            <span>Add Manager</span>
+                        </a>
+
+                        <a href="#" class="quick-action purple-action">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <span>Add Administrator</span>
+                        </a>
+
+                        <a href="#" class="quick-action yellow-action">
+                            <i class="fa-solid fa-taxi"></i>
+                            <span>Manage Taxis</span>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script>
+    // Display today's date automatically.
+    const today = new Date();
+
+    const options = {
+        day: "2-digit",
+        month: "short",
+        year: "numeric"
+    };
+
+    document.getElementById("currentDate").textContent =
+        today.toLocaleDateString("en-GB", options);
+</script>
+
+</body>
+</html>
