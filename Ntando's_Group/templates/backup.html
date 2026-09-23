@@ -1,11 +1,9 @@
-{% extends "5_AdminDashboard.html" %}
+<!-- {% extends "5_AdminDashboard.html" %}
+
 {% block body %}
 
-<div class="table-container">
-
-    <button class="add_btn" onclick="window.location.href='{{url_for('add')}}'">add</button><br>
-
-    <table>
+    <div>
+        <table>
 
         <thead>
             <tr>
@@ -13,6 +11,7 @@
                 <th>Surname</th>
                 <th>Email</th>
                 <th>Phone number</th>
+                <th>date created</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -42,40 +41,44 @@
             
             {% endfor %}
         {% else %}
-            <p>There is no Administrator</p>
+            <p>There is no user yet</p>
         {% endif %}
         </tbody>
 
         
-    </table>
+        </table>
+    </div>
 
-</div>
-                    
-    <!-- <link rel="stylesheet"
-          href="{{ url_for('static', filename='5_AdminDashboard.css') }}">
+{% endblock %} -->
 
-    <form action="{{url_for('add_admin')}}" method="post">
+
+{% extends "5_AdminDashboard.html" %}
+
+{% block body %}
+
+<!-- <div>
+    <form action="{{url_for('addCommuter')}}" method="post">
 
         <input type="text" placeholder="Enter your name" name="name"><br><br>
         <input type="text" placeholder="Enter your surname" name = "surname"><br><br>
         <input type="text" placeholder="Enter your email" name="email"><br><br>
-        <input type="password" placeholder="Enter your phone password" name="password"><br><br>
-        <input type="text" placeholder="Enter your phone number" name = "phone_no" ><br><br>
-        <button type="submit">SignUp</button>
+        <input type="password" 
+            placeholder="Enter your phone password"
+            name="password" 
+            id="password"><br><br>
+        <input type="password"
+            placeholder="Enter your phone password" 
+            id="confirm_password"><br><br>
+        <input type="text"
+            placeholder="Enter your phone number"
+            name = "phone_no" ><br><br>
+        <button type="submit">add</button>
 
-    </form> -->
+    </form> 
 
-    <!-- {% with messages = get_flashed_messages(with_categories = true)%}
-        {%if message%}
-            {% for category, message in messages %}
-            <div class="flash-message {{ category }}">
-                {{ message }}
-            </div>
-            {% endfor %}
-        {% endif %}
-    {% endwith %} -->
+    
 
-    <!-- {% with messages = get_flashed_messages(with_categories=true) %}
+    {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
             {% for category, message in messages %}
                 <div class="flash-message {{ category }}">
@@ -83,6 +86,7 @@
                 </div>
             {% endfor %}
         {% endif %}
-    {% endwith %} -->
-{% endblock %}
-    
+    {% endwith %}
+</div>
+
+{% endblock %} -->

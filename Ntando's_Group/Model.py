@@ -26,6 +26,9 @@ class Admin(db.Model):
     role = db.Column(db.String(100), default = "admin")
     date_created = db.Column(db.DateTime, default=datetime.utcnow)
 
+    # def is_Empty(self):
+    #     return self.query.count()==0
+
 
 class RankM(db.Model):
     id = db.Column(db.Integer, primary_key = True)

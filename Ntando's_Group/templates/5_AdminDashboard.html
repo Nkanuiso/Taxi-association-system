@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administrator Dashboard | SA Taxi Association</title>
+    <title>Administrator Dashboard</title>
 
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -32,40 +32,40 @@
 
         <nav class="navigation">
 
-            <a href="" class="nav-item active">
+            <a href="/5_AdminDashboard.html" class="nav-item ">
                 <i class="fa-solid fa-house"></i>
                 <span>Dashboard</span>
             </a>
 
-            <a href="" class="nav-item">
+            <a href="{{url_for('commuters')}}" class="nav-item" >
                 <i class="fa-solid fa-users"></i>
                 <span>Commuters</span>
             </a>
 
-            <a href="" class="nav-item">
+            <a href="{{url_for('rankM')}}" class="nav-item" >
                 <i class="fa-solid fa-user-tie"></i>
                 <span>Managers</span>
             </a>
 
-            <a href="" class="nav-item">
+            <a href="{{url_for('reg_admin')}}" class="nav-item" >
                 <i class="fa-solid fa-shield-halved"></i>
                 <span>Administrators</span>
             </a>
 
-            <a href="" class="nav-item">
+            <!-- <a href="" class="nav-item">
                 <i class="fa-solid fa-car"></i>
                 <span>Taxis</span>
-            </a>
+            </a> -->
 
-            <a href="" class="nav-item">
+            <a href="{{url_for('dailyActiviy')}}" class="nav-item" >
                 <i class="fa-solid fa-chart-line"></i>
                 <span>Daily Activity</span>
             </a>
 
-            <a href="#" class="nav-item">
+            <!-- <a href="#" class="nav-item">
                 <i class="fa-solid fa-gear"></i>
                 <span>Settings</span>
-            </a>
+            </a> -->
 
         </nav>
 
@@ -91,7 +91,7 @@
                 </button>
 
                 <div>
-                    <h3>Welcome, Admin</h3>
+                    <h3>Welcome, {{name}}</h3>
                     <p>Here's what's happening in the taxi association today.</p>
                 </div>
             </div>
@@ -111,7 +111,7 @@
 
         </header>
 
-
+        {% block body %}
         <!-- PAGE -->
         <section class="page">
 
@@ -426,6 +426,7 @@
 
         </section>
 
+        {% endblock %}
     </main>
 
 </div>
@@ -440,6 +441,7 @@
         month: "short",
         year: "numeric"
     };
+    
 
     document.getElementById("currentDate").textContent =
         today.toLocaleDateString("en-GB", options);
